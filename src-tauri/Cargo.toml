@@ -1,0 +1,19 @@
+[package]
+name = "toolbox"
+version = "0.1.0"
+description = "桌面小工具箱"
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon"] }
+tauri-plugin-global-shortcut = "2"
+tauri-plugin-single-instance = "2"
+tauri-plugin-autostart = "2"
+serde = { version = "1", features = ["derive"] }
+arboard = "3"
+
+[profile.release]
+strip = true

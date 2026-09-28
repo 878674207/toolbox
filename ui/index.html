@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>工具箱</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <input class="text-input js-globalsearch" placeholder="搜索便签、时间戳、JSON、工具、应用…（↑↓ 选择，回车执行，Esc 关闭）" spellcheck="false" />
+      <div class="gs-panel js-gs-panel" hidden></div>
+    </header>
+    <div class="app-body">
+      <aside class="sidebar">
+        <div class="brand"><span class="brand-logo">🧰</span><span class="brand-name">工具箱</span></div>
+        <nav id="tool-nav" class="tool-nav"></nav>
+        <div class="sidebar-footer">
+          <button id="settings-toggle" type="button" class="nav-item">
+            <span class="nav-icon">⚙</span><span>设置</span>
+          </button>
+          <button id="theme-toggle" class="theme-toggle" type="button" title="切换深浅色主题"></button>
+          <div class="ver">v0.1.0 · 更多工具开发中</div>
+        </div>
+      </aside>
+      <main id="tool-main" class="main"></main>
+    </div>
+  </div>
+
+  <!-- 加载顺序必须是：core.js（框架函数）→ 各工具模块 → app.js（启动渲染） -->
+  <script src="core.js"></script>
+  <script src="tools/case.js"></script>
+  <script src="tools/tz.js"></script>
+  <script src="tools/timestamp.js"></script>
+  <script src="tools/jsoncore.js"></script>
+  <script src="tools/json.js"></script>
+  <script src="tools/notes.js"></script>
+  <script src="tools/settings.js"></script>
+  <script src="globalsearch.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
